@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/base/normalize.css">
+    <link rel="stylesheet" href="css/base/base.css">
+    <title>To do list</title>
+    <style>
+        * {
+            margin: 0; 
+            padding: 0;
+            box-sizing: inherit;
+        }
+        html {
+            box-sizing: border-box;
+        }
+        .top-bar {
+            width: 100%;
+            height: 60px;
+            border: 1px solid #333;
+        }
+        .content {
+            /*根据需求定具体实现方式*/
+            margin: 0 auto;
+            width: 800px;
+            /*兼容性不是很好*/
+            height: calc(100vh - 90px);
+            border: 1px solid #333;
+        }
+        .task-list {
+            position: fixed;
+            width: 30%;
+            max-width: 280px;
+            top: 60px;
+            left: 0;
+            bottom: 30px;
+            border: 1px solid red;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header class="top-bar">
+        </header>
+        <main class="content">
+
+        </main>
+        <section class="task-list">
+
+        </section>
+        <footer class="footer">
+        </footer>
+    </div>
+</body>
+</html>
