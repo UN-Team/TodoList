@@ -1,10 +1,22 @@
-	body{
-		font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
-	}
-	html,body,#app{
-		height: 100%
-	}
-	#app{
-        background-image: url(bg.jpg) ;
-        background-repeat:repeat-x;
-    }
+* {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+    color: #fff;
+	font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+}
+
+html, body, #app {
+	height: 100%
+}
+
+#app {
+    background: url(../../img/bg.jpg) no-repeat;
+    background-size: cover;
+}
