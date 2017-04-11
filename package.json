@@ -1,0 +1,23 @@
+{
+  "name": "todolist",
+  "version": "0.0.1",
+  "description": "a simple todolist",
+  "main": "/src/js/index.js",
+  "scripts": {
+    "start": "gulp",
+    "deploy": "gulp deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "The UN",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-filter": "^5.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "gulp-watch": "^4.3.11"
+  }
+}
