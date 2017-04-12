@@ -1,3 +1,14 @@
+#weather {
+	float:right;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	color: white;
+	text-align: center;
+}
+
 #timeline-container {
 	position: absolute;
 	height: 100%;
