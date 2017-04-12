@@ -6,41 +6,112 @@
 		<title>可排序列表组件demo</title>
 		<link rel="stylesheet" type="text/css" href="../src/css/base/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="../src/css/modules/sortable-list.css" />
+		<script src="../src/js/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/jquery-ui-1.10.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body {
+				background-color: #E7EAEC;
+			}
+			
+			.sortable-container {
+				display: flex;
+			}
+			
+			.list-header {
+				margin: 5px 0;
+			}
+			
+			.list-header span {
+				font-size: 1.5em;
+			}
+		</style>
 	</head>
 
 	<body>
-		<ul class="sortable-list connectList" id="todo">
-			<li class="event-info">What to do?
-				<div class="event-detail">
-					<button class="btn btn-default">Tag</button>
-					<i class="fa fa-clock-o"></i>
-					<small>12.10.2015</small>
+		<div class="sortable-container">
+			<div class="sortable">
+				<div class="list-header">
+					<span id="">Todo</span><br />
+					<i class="fa fa-hand-o-up"></i>
+					<small>drag task between list</small>					
 				</div>
-			</li>
-			<li class="event-warning">What to do?
-				<div class="event-detail">
-					<button class="btn btn-warning">Mark</button>
-					<i class="fa fa-clock-o"></i>
-					<small>12.10.2015</small>
+				<ul class="sortable-list connectList" id="todo">
+					<li class="event-info">What to do?
+						<div class="event-detail">
+							<button class="btn btn-default">Tag</button>
+							<i class="fa fa-clock-o"></i>
+							<small>12.10.2015</small>
+						</div>
+					</li>
+					<li class="event-warning">What to do?
+						<div class="event-detail">
+							<button class="btn btn-warning">Mark</button>
+							<i class="fa fa-clock-o"></i>
+							<small>12.10.2015</small>
+						</div>
+					</li>
+					<li class="event-danger">What to do?
+						<div class="event-detail">
+							<button class="btn btn-warning">Mark</button>
+							<i class="fa fa-clock-o"></i>
+							<small>12.10.2015</small>
+						</div>
+					</li>
+					<li class="event-success">What to do?
+						<div class="event-detail">
+							<button class="btn btn-success">Done</button>
+							<i class="fa fa-clock-o"></i>
+							<small>12.10.2015</small>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="sortable">
+				<div class="list-header">
+					<span id="">Completed</span><br />
+					<i class="fa fa-hand-o-up"></i>
+					<small>drag task between list</small>
 				</div>
-			</li>
-			<li class="event-danger">What to do?
-				<div class="event-detail">
-					<button class="btn btn-warning">Mark</button>
-					<i class="fa fa-clock-o"></i>
-					<small>12.10.2015</small>
-				</div>
-			</li>
-			<li class="event-success">What to do?
-				<div class="event-detail">
-					<button class="btn btn-success">Done</button>
-					<i class="fa fa-clock-o"></i>
-					<small>12.10.2015</small>
-				</div>
-			</li>
-		</ul>
+				<ul class="sortable-list connectList" id="completed">
+					<li class="event-info">What to do?
+						<div class="event-detail">
+							<button class="btn btn-default">Tag</button>
+							<i class="fa fa-clock-o"></i>
+							<small>12.10.2015</small>
+						</div>
+					</li>
+					<li class="event-warning">What to do?
+						<div class="event-detail">
+							<button class="btn btn-warning">Mark</button>
+							<i class="fa fa-clock-o"></i>
+							<small>12.10.2015</small>
+						</div>
+					</li>
+					<li class="event-danger">What to do?
+						<div class="event-detail">
+							<button class="btn btn-warning">Mark</button>
+							<i class="fa fa-clock-o"></i>
+							<small>12.10.2015</small>
+						</div>
+					</li>
+					<li class="event-success">What to do?
+						<div class="event-detail">
+							<button class="btn btn-success">Done</button>
+							<i class="fa fa-clock-o"></i>
+							<small>12.10.2015</small>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 		<script type="text/javascript">
-			
+			$('#todo, #completed').sortable({
+				connectWith: ".connectList",
+				update: function(event, ui) {
+					var todo = $("#todo").sortable("toArray");
+					var completed = $("#completed").sortable("toArray");
+				}
+			}).disableSelection();
 		</script>
 	</body>
 

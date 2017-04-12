@@ -1,6 +1,24 @@
+.sortable {
+	background-color: #FFFFFF;
+	padding: 15px;
+	margin: 10px;
+	width: 50%;
+}
+
 .sortable-list {
 	list-style: none;
 	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+@media only screen and (max-width:340px) {
+	.sortable {
+		width: auto;
+	}
+	.sortable-list {
+		width: auto;
+	}
 }
 
 .sortable-list li {
