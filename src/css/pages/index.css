@@ -1,5 +1,7 @@
 #timeline-container {
-	position: fixed;
+	position: absolute;
+	height: 100%;
+	overflow-y: scroll;
 	top: 0;
 	max-width: 300px;
 	opacity: 0.4;
