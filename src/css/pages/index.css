@@ -1,0 +1,15 @@
+#timeline-container {
+	position: fixed;
+	top: 0;
+	max-width: 300px;
+	opacity: 0.4;
+	transition: left 1s ease;
+}
+
+.timeline-container-hide {
+	left: -300px;
+}
+
+.timeline-container-show {
+	left: 0;
+}
