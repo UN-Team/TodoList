@@ -1,11 +1,16 @@
 function yangzhenfang_showTodo(v) {
 	var item = document.querySelector("#new-item");
 	item.innerHTML = "";
-	var len = 0;
+	/*var len = 0;
 	if (typeof v === 'string') {
 		len = v.length;
-	}
-	for (var i = 0; i < len; i++) {
+	}*/
+	var s = document.createElement("div");
+	s.innerHTML = v;
+	s.style.animation = "jumb 4s ease";
+	// s.style.opacity = "0";
+	item.append(s);
+	/*for (var i = 0; i < len; i++) {
 		var s = document.createElement("span");
 		s.innerHTML = v[i];
 		var j = 0.1 * i;
@@ -13,7 +18,7 @@ function yangzhenfang_showTodo(v) {
 		s.style.display = "table-cell";
 		s.style.opacity = "0";
 		item.append(s);
-	}
+	}*/
 }
 
 function yangzhenfang_init() {
