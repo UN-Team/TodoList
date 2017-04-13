@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>时间输入组件demo</title>
+		<style type="text/css">
+			.time:hover {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<span class="time time-hour" id="hour"></span>
+		<span><strong>:</strong></span>
+		<span class="time time-minites" id="minute"></span>
+		<script src="../src/js/modules/time-input.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			/**
+			 * 初始化时间组件
+			 * @method timeInit(hourId, monuteId)
+			 * @param {string} hourId:小时元素id
+			 * @param {string} minuteId:分钟元素id
+			 */
+			timeInit("hour", "minute");
+		</script>
+	</body>
+
+</html>
