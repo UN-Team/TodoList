@@ -23,7 +23,7 @@ function yangzhenfang_showTodo(v) {
 
 function yangzhenfang_init() {
 	var input = document.querySelector("#todo-input");
-	input.addEventListener("keypress", function(evt) {
+	input.addEventListener("keypress", function (evt) {
 		if (evt.keyCode == 13) {
 			var value = input.value;
 			var obj = {
@@ -40,6 +40,6 @@ function yangzhenfang_init() {
 	}, true);
 
 }
-window.onload = function() {
+window.onload = function () {
 	yangzhenfang_init();
 }

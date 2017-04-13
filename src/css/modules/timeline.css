@@ -23,9 +23,11 @@
 	display: inline;
 	position: relative;
 }
+
 .timeline-item .date-info {
-	border-right: 4px solid #1c84c6;	
+	border-right: 4px solid #1c84c6;
 }
+
 .timeline-item .date-warning {
 	border-right: 4px solid #f8ac59;
 }
@@ -37,6 +39,7 @@
 .timeline-item .date-success {
 	border-right: 4px solid #1ab394;
 }
+
 .timeline-item .date i {
 	position: absolute;
 	top: 0;

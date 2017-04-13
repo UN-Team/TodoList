@@ -46,6 +46,8 @@ body {
     margin-top: 30px;
     display: flex;
 }
+
+
 /* 
 #new-item span {
     display: table-cell;
@@ -59,17 +61,15 @@ body {
         opacity: 0.2;
     }
     25% {
-    	opacity: 0.5;
+        opacity: 0.5;
     }
     50% {
-    	opacity: 0.7;
+        opacity: 0.7;
     }
-    75%{
-    	opacity: 0.9;
+    75% {
+        opacity: 0.9;
     }
     100% {
         transform: translateY(0px);
-
     }
 }
-

@@ -1,6 +1,7 @@
 * {
     box-sizing: inherit;
 }
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -9,11 +10,13 @@ html {
 body {
     user-select: none;
     color: #fff;
-	font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
 }
 
-html, body, #app {
-	height: 100%
+html,
+body,
+#app {
+    height: 100%
 }
 
 #app {
