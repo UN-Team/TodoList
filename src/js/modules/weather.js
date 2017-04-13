@@ -3,27 +3,27 @@ var weather = '';
 var temperature = '10';
 //对XMLHttpRequest对象的封装，用于发出一个针对JSON数据的HTTP请求，并且返回一个Promise对象
 var getJSON = function(url) {
-  var promise = new Promise(function(resolve, reject){
-    var client = new XMLHttpRequest();
-    client.open("GET", url);
-    client.onreadystatechange = handler;
-    client.responseType = "json";
-    client.setRequestHeader("Accept", "application/json");
-    client.send();
+	var promise = new Promise(function(resolve, reject){
+		var client = new XMLHttpRequest();
+		client.open("GET", url);
+		client.onreadystatechange = handler;
+		client.responseType = "json";
+		client.setRequestHeader("Accept", "application/json");
+		client.send();
 
-    function handler() {
-      if (this.readyState !== 4) {
-        return;
-      }
-      if (this.status === 200) {
-        resolve(this.response);
-      } else {
-        reject(new Error(this.statusText));
-      }
-    };
-  });
+		function handler() {
+			if (this.readyState !== 4) {
+				return;
+			}
+			if (this.status === 200) {
+				resolve(this.response);
+			} else {
+				reject(new Error(this.statusText));
+			}
+		};
+	});
 
-  return promise;
+	return promise;
 };
 //对跨域获取script的封装，执行返回脚本并，返回一个promise对象
 function getAsyncScript(url){
