@@ -1,0 +1,28 @@
+#weather {
+	float:right;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	color: white;
+	text-align: center;
+}
+
+#timeline-container {
+	position: absolute;
+	height: 100%;
+	overflow-y: scroll;
+	top: 0;
+	max-width: 300px;
+	opacity: 0.4;
+	transition: left 1s ease;
+}
+
+.timeline-container-hide {
+	left: -300px;
+}
+
+.timeline-container-show {
+	left: 0;
+}

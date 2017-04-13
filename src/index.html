@@ -1,18 +1,141 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>test</title>
-    <link rel="stylesheet" type="text/css" href="css/modules/input.css">
-    <script type="text/javascript" src="js/modules/input.js"></script>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<link rel="stylesheet" type="text/css" href="css/base/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/modules/input.css">
+		<link rel="stylesheet" type="text/css" href="css/modules/timeline.css" />
+		<link rel="stylesheet" type="text/css" href="css/pages/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base/animate.css">
+		
+	</head>
 
-<body>
-    <div class="input-container">
-        <h2>What to do today?</h2>
-        <input type="text" id="todo-input">
-        <span id="new-item"></span>
-    </div>
-</body>
+	<body>
+		<div id="weather"></div>
+		<div class="input-container">
+			<h2>What to do today?</h2>
+			<input type="text" id="todo-input">
+			<div id="new-item"></div>
+		</div>
+		<div id="timeline-container" class="timeline-container-hide">
+			<div class="timeline">
+				<div class="timeline-item">
+					<div class="date date-info">
+						<i class="fa fa-sticky-note-o"></i>
+						<span>6:30 am</span><br />
+						<small class="text-before">2 hours ago</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">start projrct</div>
+						<div class="todo-body">start todolist project start todolist project</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-warning">
+						<i class="fa fa-file"></i>
+						<span>7:30 am</span><br />
+						<small class="text-before">2 hours ago</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">start projrct</div>
+						<div class="todo-body">start todolist project</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-danger">
+						<i class="fa fa-warning"></i>
+						<span>8:30 am</span><br />
+						<small class="text-before">2 hours ago</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">start projrct</div>
+						<div class="todo-body">start todolist project start todolist project</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-success">
+						<i class="fa fa-file"></i>
+						<span>上午9:30</span><br />
+						<small class="text-before">3小时前</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">开始项目</div>
+						<div class="todo-body">开始项目</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-danger">
+						<i class="fa fa-warning"></i>
+						<span>8:30 am</span><br />
+						<small class="text-before">2 hours ago</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">start projrct</div>
+						<div class="todo-body">start todolist project</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-success">
+						<i class="fa fa-file"></i>
+						<span>上午9:30</span><br />
+						<small class="text-before">3小时前</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">开始项目</div>
+						<div class="todo-body">开始项目</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-danger">
+						<i class="fa fa-warning"></i>
+						<span>8:30 am</span><br />
+						<small class="text-before">2 hours ago</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">start projrct</div>
+						<div class="todo-body">start todolist project start todolist project start todolist project</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-success">
+						<i class="fa fa-file"></i>
+						<span>上午9:30</span><br />
+						<small class="text-before">3小时前</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">开始项目</div>
+						<div class="todo-body">开始项目</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-danger">
+						<i class="fa fa-warning"></i>
+						<span>8:30 am</span><br />
+						<small class="text-before">2 hours ago</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">start projrct</div>
+						<div class="todo-body">start todolist project start todolist project start todolist project</div>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="date date-success">
+						<i class="fa fa-file"></i>
+						<span>上午9:30</span><br />
+						<small class="text-before">3小时前</small>
+					</div>
+					<div class="content">
+						<div class="todo-header">开始项目</div>
+						<div class="todo-body">开始项目</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/modules/weather.js"></script>
+		<script type="text/javascript" src="js/modules/input.js"></script>
+		<script type="text/javascript" src="js/pages/index.js"></script>
+	</body>
 
 </html>
