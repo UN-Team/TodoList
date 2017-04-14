@@ -125,6 +125,12 @@ function yangzhenfang_input_init(inputId, containerId) {
 			};
 			temp.push(obj);
 			input.value = "";
+			var str = value;
+			if (str.length > 6) {
+				str = str.slice(0, 6);
+				str += "...";
+				value = str;
+			}
 			yangzhenfang_insertContent(value);
 		}
 	}, true);

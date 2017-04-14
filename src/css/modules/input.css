@@ -44,7 +44,7 @@ body {
 .todo-content {
     width: 100%;
     position: absolute;
-    transition: top 1s;
+    transition: tnop 1s;
     text-align: center;
     font-weight: 600;
 }
