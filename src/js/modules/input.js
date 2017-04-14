@@ -14,11 +14,12 @@ function removeClass(obj, cls) {
 }
 var times;
 
-function insertContent(v) {
+function insertContent(d, v) {
 	var con = document.querySelectorAll(".todo-content");
 	var t = times % 4;
 	if (t == 1) {
-		con[0].innerHTML = v;
+		console.log(con[0]);
+		con[0].innerHTML = d + "  " + v;
 		removeClass(con[0], "move1");
 		addClass(con[0], "move2");
 
@@ -36,7 +37,7 @@ function insertContent(v) {
 		removeClass(con[0], "move2");
 		addClass(con[0], "move3");
 
-		con[1].innerHTML = v;
+		con[1].innerHTML = d + "  " + v;
 		removeClass(con[1], "move1");
 		addClass(con[1], "move2");
 
@@ -54,7 +55,7 @@ function insertContent(v) {
 		removeClass(con[1], "move2");
 		addClass(con[1], "move3");
 
-		con[2].innerHTML = v;
+		con[2].innerHTML = d + "  " + v;
 		removeClass(con[2], "move1");
 		addClass(con[2], "move2");
 
@@ -72,7 +73,7 @@ function insertContent(v) {
 		removeClass(con[2], "move2");
 		addClass(con[2], "move3");
 
-		con[3].innerHTML = v;
+		con[3].innerHTML = d + "  " + v;
 		removeClass(con[3], "move1");
 		addClass(con[3], "move2");
 
@@ -83,23 +84,25 @@ var temp = [];
 function input_init(inputId, containerId) {
 	var input = document.querySelector("#" + inputId);
 	var container = document.querySelector("#" + containerId);
-	// var list = document.querySelectorAll(".todo-content");
 	var li;
 	for (var i = 0; i < 4; i++) {
 		li = document.createElement("div");
 		addClass(li, "todo-content");
 		addClass(li, "move1");
 		container.append(li);
-		// addClass(list[i], "move1");
 	}
 	times = 0;
 	input.addEventListener("keypress", function(evt) {
 		if (evt.keyCode == 13 && input.value != "") {
 			var value = input.value;
+			var h = document.querySelector("#hour").innerHTML;
+			var m = document.querySelector("#minute").innerHTML;
+			var t = h + ":" + m;
+			var date = new Date().toLocaleString().slice(0, 9) + "," + t;
 			times++;
 			var obj = {
 				todoContent: value,
-				todoDate: new Date().toLocaleString()
+				todoDate: date
 			};
 			temp.push(obj);
 			input.value = "";
@@ -109,7 +112,7 @@ function input_init(inputId, containerId) {
 				str += "...";
 				value = str;
 			}
-			insertContent(value);
+			insertContent(t, value);
 		}
 	}, true);
 
