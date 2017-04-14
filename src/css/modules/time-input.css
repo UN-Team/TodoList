@@ -1,0 +1,10 @@
+.time-hour,
+.time-minites {
+	font-size: 0.8em;
+	border-top: 2px solid #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+}
+
+#main-input {
+	width: auto !important;
+}

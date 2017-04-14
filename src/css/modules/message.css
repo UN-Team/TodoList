@@ -1,0 +1,36 @@
+#message-container {
+	position: absolute;
+	bottom: 20px;
+	z-index: 1;
+	transition: left 1s ease;
+}
+
+.message-container-hide {
+	left: -50px;
+}
+
+.message-container-show {
+	left: -20px;
+}
+
+#message-container:hover {
+	left: -20px
+}
+
+.message-num {
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	position: absolute;
+	left: 55%;
+	top: 0;
+	line-height: 40px;
+}
+
+.pop {
+	width: 70px;
+	height: 40px;
+	border-radius: 30px;
+	background: yellow;
+	opacity: 0.5;
+}
