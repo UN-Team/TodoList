@@ -6,7 +6,6 @@ body {
 
 body {
     display: flex;
-    /*flex-direction: column;*/
     margin: 0;
     background-image: url(../../img/04.jpg);
     background-repeat: no-repeat;
@@ -15,39 +14,21 @@ body {
     align-items: center;
     justify-content: center;
 }
-.todo-content {
+.input-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+    width: 500px;
+    height: 300px;
+    color: white;
+    align-items: center;
+}
+
+.todoList-container {
+    position: relative;
     width: 100%;
-    position: absolute;
-    transition: top 1s;
-    text-align: center;
-    font-weight: 600;
 }
-
-.move1 {
-    /*top: 460px;*/
-    top:-40px;
-    opacity: 0;
-}
-
-.move2{
-    /*top: 500px;*/
-    top:40px;
-    opacity: 1;
-}
-
-.move3 {
-    /*top: 540px;*/
-    top:80px;
-    opacity: 0.7;
-}
-
-.move4{
-    /*top: 580px;*/
-    top: 120px;
-    opacity: 0.3;
-}
-
-#todo-input {
+.todo-input {
     font-size: 30px;
     text-align: center;
     width: 100%;
@@ -60,20 +41,30 @@ body {
     outline: none;
     background-color: transparent;
 }
-
-.input-container {
-    display: flex;
-    flex-direction: column;
-    font-size: 35px;
-    width: 500px;
-    height: 300px;
-    color: white;
-    align-items: center;
+.todo-content {
+    width: 100%;
+    position: absolute;
+    transition: top 1s;
+    text-align: center;
+    font-weight: 600;
 }
 
-#todoList-container {
-    /*margin-top: 35px;*/
-    position: relative;
-    width: 100%;
-    /*width: 100%;*/
+.move1 {
+    top:-40px;
+    opacity: 0;
+}
+
+.move2{
+    top:40px;
+    opacity: 1;
+}
+
+.move3 {
+    top:80px;
+    opacity: 0.7;
+}
+
+.move4{
+    top: 120px;
+    opacity: 0.3;
 }

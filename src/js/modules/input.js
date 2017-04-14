@@ -22,7 +22,6 @@
 // }
 function yangzhenfang_hasClass(obj, cls) {
 	return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-	// console.log(obj.className);
 }
 
 function yangzhenfang_addClass(obj, cls) {
@@ -35,22 +34,10 @@ function yangzhenfang_removeClass(obj, cls) {
 		obj.className = obj.className.replace(reg, ' ');
 	}
 }
-
-// function toggleClass(obj, cls) {
-// 	if (yangzhenfang_hasClass(obj, cls)) {
-// 		yangzhenfang_removeClass(obj, cls);
-// 	} else {
-// 		yangzhenfang_addClass(obj, cls);
-// 	}
-// }
-
 var yangzhenfang_times;
 
 function yangzhenfang_insertContent(v) {
 	var con = document.querySelectorAll(".todo-content");
-	// var tv = document.defaultView.getComputedStyle(con[3], null).top;
-	// console.log(con);
-
 	var t = yangzhenfang_times % 4;
 	if (t == 1) {
 		con[0].innerHTML = v;
@@ -115,29 +102,31 @@ function yangzhenfang_insertContent(v) {
 }
 var temp = [];
 
-function yangzhenfang_init() {
-	var input = document.querySelector("#todo-input");
+function yangzhenfang_input_init(inputId, containerId) {
+	var input = document.querySelector("#" + inputId);
+	var container = document.querySelector("#" + containerId);
+	// var list = document.querySelectorAll(".todo-content");
+	var li;
+	for (var i = 0; i < 4; i++) {
+		li = document.createElement("div");
+		yangzhenfang_addClass(li, "todo-content");
+		yangzhenfang_addClass(li, "move1");
+		container.append(li);
+		// yangzhenfang_addClass(list[i], "move1");
+	}
 	yangzhenfang_times = 0;
 	input.addEventListener("keypress", function(evt) {
-		if (evt.keyCode == 13) {
-			yangzhenfang_times++;
+		if (evt.keyCode == 13 && input.value != "") {
 			var value = input.value;
+			yangzhenfang_times++;
 			var obj = {
 				todoContent: value,
 				todoDate: new Date().toLocaleString()
 			};
 			temp.push(obj);
-			// console.log(obj);
-			// localStorage.setItem("todoItem", {
-			// 	item: value
-			// });
 			input.value = "";
-			// yangzhenfang_showTodo(value);
 			yangzhenfang_insertContent(value);
 		}
 	}, true);
 
-}
-window.onload = function() {
-	yangzhenfang_init();
 }
