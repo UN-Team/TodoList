@@ -4,143 +4,191 @@
 <head>
 	<meta charset="utf-8">
 	<title>test</title>
-	<link rel="stylesheet" type="text/css" href="css/base/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/modules/input.css" />
-	<link rel="stylesheet" type="text/css" href="css/modules/timeline.css" />
+	<link rel="stylesheet" type="text/css" href="css/modules/list.css" />
 	<link rel="stylesheet" type="text/css" href="css/pages/index.css" />
 	<link rel="stylesheet" type="text/css" href="css/base/weather.css" />
-
+	<style>
+		
+	</style>
 </head>
 
 <body>
-	<div id="weather"></div>
-	<div class="input-container">
-        <h2>What to do today?</h2>
-        <input type="text" id="todo-input">
-        <div id="todoList-container">
-            <div class="todo-content move1"></div>
-            <div class="todo-content move1"></div>
-            <div class="todo-content move1"></div>
-            <div class="todo-content move1"></div>
-        </div>
-    </div>
-	<div id="timeline-container" class="timeline-container-hide">
-		<div class="timeline">
-			<div class="timeline-item">
-				<div class="date date-info">
-					<i class="fa fa-sticky-note-o"></i>
-					<span>6:30 am</span><br />
-					<small class="text-before">2 hours ago</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">start projrct</div>
-					<div class="todo-body">start todolist project start todolist project</div>
+	<div class="app">
+		<div class="wrapper" v-on:mousemove="showDrawer">
+			<div id="weather"></div>
+			<div class="input-container">
+				<h2 v-html="title"></h2>
+				<input type="text" id="todo-input" v-model="inputText" v-on:keyup="addInput">
+				<div id="todoList-container">
+					<div class="todo-content move1"></div>
+					<div class="todo-content move1"></div>
+					<div class="todo-content move1"></div>
+					<div class="todo-content move1"></div>
 				</div>
 			</div>
-			<div class="timeline-item">
-				<div class="date date-warning">
-					<i class="fa fa-file"></i>
-					<span>7:30 am</span><br />
-					<small class="text-before">2 hours ago</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">start projrct</div>
-					<div class="todo-body">start todolist project</div>
-				</div>
-			</div>
-			<div class="timeline-item">
-				<div class="date date-danger">
-					<i class="fa fa-warning"></i>
-					<span>8:30 am</span><br />
-					<small class="text-before">2 hours ago</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">start projrct</div>
-					<div class="todo-body">start todolist project start todolist project</div>
-				</div>
-			</div>
-			<div class="timeline-item">
-				<div class="date date-success">
-					<i class="fa fa-file"></i>
-					<span>上午9:30</span><br />
-					<small class="text-before">3小时前</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">开始项目</div>
-					<div class="todo-body">开始项目</div>
-				</div>
-			</div>
-			<div class="timeline-item">
-				<div class="date date-danger">
-					<i class="fa fa-warning"></i>
-					<span>8:30 am</span><br />
-					<small class="text-before">2 hours ago</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">start projrct</div>
-					<div class="todo-body">start todolist project</div>
-				</div>
-			</div>
-			<div class="timeline-item">
-				<div class="date date-success">
-					<i class="fa fa-file"></i>
-					<span>上午9:30</span><br />
-					<small class="text-before">3小时前</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">开始项目</div>
-					<div class="todo-body">开始项目</div>
-				</div>
-			</div>
-			<div class="timeline-item">
-				<div class="date date-danger">
-					<i class="fa fa-warning"></i>
-					<span>8:30 am</span><br />
-					<small class="text-before">2 hours ago</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">start projrct</div>
-					<div class="todo-body">start todolist project start todolist project start todolist project</div>
-				</div>
-			</div>
-			<div class="timeline-item">
-				<div class="date date-success">
-					<i class="fa fa-file"></i>
-					<span>上午9:30</span><br />
-					<small class="text-before">3小时前</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">开始项目</div>
-					<div class="todo-body">开始项目</div>
-				</div>
-			</div>
-			<div class="timeline-item">
-				<div class="date date-danger">
-					<i class="fa fa-warning"></i>
-					<span>8:30 am</span><br />
-					<small class="text-before">2 hours ago</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">start projrct</div>
-					<div class="todo-body">start todolist project start todolist project start todolist project</div>
-				</div>
-			</div>
-			<div class="timeline-item">
-				<div class="date date-success">
-					<i class="fa fa-file"></i>
-					<span>上午9:30</span><br />
-					<small class="text-before">3小时前</small>
-				</div>
-				<div class="content">
-					<div class="todo-header">开始项目</div>
-					<div class="todo-body">开始项目</div>
-				</div>
+			<div id="timeline-container" class="timeline-container-hide">
+				<ul class="todo-list">
+					<li class="todo" v-for="todo in todolist">
+						<div v-class="todo.className">
+							<span class="toggle" v-on:click="finishItem(todo)"></span>
+							<label>{{todo.title}}</label>
+							<span class="destroy" v-on:click="remove(todo)"></span>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
+
+	<script src="./js/mvvm.js"></script>
+	<script>
+		var vm = new MVVM({
+			el: '.app',
+			data: {
+				title: "what to do next ?",
+				todolist: [
+					{
+						title: "爱睡懒觉凯迪拉克加福禄寿",
+						isFinished: false,
+						className: 'view'
+					},
+					{
+						title: '啥地方撒发送到',
+						isFinished: true,
+						className: 'view completed'
+					}],
+				inputText: "",
+				times: 0
+			},
+			methods: {
+				showDrawer: function (event) {
+					var timeline = document.getElementById('timeline-container');
+					if (event.clientX < 300) {
+						timeline.className = 'timeline-container-show'
+					} else {
+						timeline.className = 'timeline-container-hide';
+					}
+				},
+				addInput: function (event) {
+					if (event.keyCode == 13) {
+						this.times++;
+						var value = this.inputText;
+						var obj = {
+							title: value,
+							isFinished: false,
+							className: 'view'
+						};
+						this.todolist.unshift(obj);
+						console.log(this.todolist);
+						this.inputText = "";
+						this.$options.methods.insertContent.call(this, value);
+					}
+				},
+				remove: function (todo) {
+					var index = -1;
+					for (var i = 0; i < this.todolist.length; i++) {
+						if (todo === this.todolist[i]) {
+							index = i;
+							break;
+						}
+					}
+					if (index !== -1) {
+						this.todolist.splice(index, 1);
+					}
+				},
+				finishItem: function (todo) {
+					if (todo.isFinished) {
+						todo.isFinished = false;
+						todo.className = 'view';
+					} else {
+						todo.isFinished = true;
+						todo.className = 'view completed';
+					}
+				},
+				insertContent: function (v) {
+					function hasClass(obj, cls) {
+						return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+					}
+
+					function addClass(obj, cls) {
+						if (!hasClass(obj, cls)) obj.className += " " + cls;
+					}
+
+					function removeClass(obj, cls) {
+						if (hasClass(obj, cls)) {
+							var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+							obj.className = obj.className.replace(reg, ' ');
+						}
+					}
+					var con = document.querySelectorAll(".todo-content");
+
+					var t = this.times % 4;
+					if (t == 1) {
+						con[0].innerHTML = v;
+						removeClass(con[0], "move1");
+						addClass(con[0], "move2");
+
+						con[1].innerHTML = "";
+						removeClass(con[1], "move4");
+						addClass(con[1], "move1");
+
+						removeClass(con[2], "move3");
+						addClass(con[2], "move4");
+
+
+						removeClass(con[3], "move2");
+						addClass(con[3], "move3");
+					} else if (t == 2) {
+						removeClass(con[0], "move2");
+						addClass(con[0], "move3");
+
+						con[1].innerHTML = v;
+						removeClass(con[1], "move1");
+						addClass(con[1], "move2");
+
+						con[2].innerHTML = "";
+						removeClass(con[2], "move4");
+						addClass(con[2], "move1");
+
+
+						removeClass(con[3], "move3");
+						addClass(con[3], "move4");
+					} else if (t == 3) {
+						removeClass(con[0], "move3");
+						addClass(con[0], "move4");
+
+						removeClass(con[1], "move2");
+						addClass(con[1], "move3");
+
+						con[2].innerHTML = v;
+						removeClass(con[2], "move1");
+						addClass(con[2], "move2");
+
+						con[3].innerHTML = "";
+						removeClass(con[3], "move4");
+						addClass(con[3], "move1");
+					} else if (t == 0) {
+						con[0].innerHTML = "";
+						removeClass(con[0], "move4");
+						addClass(con[0], "move1");
+
+						removeClass(con[1], "move3");
+						addClass(con[1], "move4");
+
+						removeClass(con[2], "move2");
+						addClass(con[2], "move3");
+
+						con[3].innerHTML = v;
+						removeClass(con[3], "move1");
+						addClass(con[3], "move2");
+
+					}
+				}
+			}
+		});
+	</script>
 	<script type="text/javascript" src="js/modules/weather.js"></script>
-	<script type="text/javascript" src="js/modules/input.js"></script>
-	<script type="text/javascript" src="js/pages/index.js"></script>
 </body>
 
 </html>

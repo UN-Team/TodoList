@@ -12,52 +12,6 @@
 	position: relative;
 }
 
-.timeline-item .date {
-	width: 30%;
-	max-width: 150px;
-	min-height: 90px;
-	flex-direction: row;
-	text-align: center;
-	box-sizing: border-box;
-	padding-top: 30px;
-	display: inline;
-	position: relative;
-}
-
-.timeline-item .date-info {
-	border-right: 4px solid #1c84c6;
-}
-
-.timeline-item .date-warning {
-	border-right: 4px solid #f8ac59;
-}
-
-.timeline-item .date-danger {
-	border-right: 4px solid #ed5565;
-}
-
-.timeline-item .date-success {
-	border-right: 4px solid #1ab394;
-}
-
-.timeline-item .date i {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 5px;
-	width: 30px;
-	text-align: center;
-	border-top: 1px solid #e7eaec;
-	border-bottom: 1px solid #e7eaec;
-	border-left: 1px solid #e7eaec;
-	background: #f8f8f8;
-	color: #000000;
-}
-
-.timeline-item .date .text-before {
-	color: #1ab394;
-}
-
 .timeline-item .content {
 	width: 70%;
 	height: 100%;
